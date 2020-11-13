@@ -1,8 +1,8 @@
 galaxy_info:
   role_name: azure-devops-agent
-  author: Yohan Belval
+  author: Keith Gaputis
   description: Azure DevOps Agent for Linux.
-  company: GSoft
+  company: axis
 
   license: "license (Apache-2.0)"
 

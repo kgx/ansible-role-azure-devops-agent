@@ -132,6 +132,14 @@
   loop: "{{ az_devops_agent_user_capabilities | default({}) | dict2items }}"
   become: true
 
+- name: Update agent listener runtime config to resolve registration issue (custom)
+  template:
+    src: "Agent.Listener.runtimeconfig.json.j2"
+    dest: "{{ az_devops_agent_folder }}/bin/Agent.Listener.runtimeconfig.json"
+    owner: "{{ az_devops_agent_user }}"
+    group: "{{ az_devops_agent_group }}"
+    mode: 0644
+
 - name: Configure agent as a build server
   command: "{{ (agent_cmd_args + build_agent_cmd_args) | join(' ') }}"
   args:

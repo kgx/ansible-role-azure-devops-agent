@@ -1,0 +1,4 @@
+- name: Enable epel repo
+  package:
+    name: epel-release
+    state: installed
